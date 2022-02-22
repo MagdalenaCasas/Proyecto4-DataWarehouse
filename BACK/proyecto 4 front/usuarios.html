@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/stylle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- fontAwesome-->
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body>
+    <header>
+        <a class="logo" href="#">LOGO</a>
+        <nav>
+            <ul>
+                <li id='li-contactos'><a href="./contactos.html">Contactos</a></li>
+                <li id='li-companias'><a href="./companias.html">Compañías</a></li>
+                <li id='li-usuarios'><a href="#">Usuarios</a></li>
+                <li id='li-regiones'><a href="./regiones.html">Región/Ciudad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='li-usuariosle'>
+            <button id='add-usuario'>Crear nuevo usuario</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th id='first_name'>Nombre</th>
+                        <th id='last_name'>Apellido</th>
+                        <th id='email'>Email</th>
+                        <th id='profile'>Perfil</th>
+                        <th id='actions'>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+                </tbody>
+            </table>
+        </section>
+       
+        
+        <section id='pop-up-usuario'>
+            <div class='pop-up'>
+                <h2 id='pop-up-title'>Usuario</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="input-nombre" id="input-first-name">
+                    </div>
+                    
+                    <div class='tableDiv'> 
+                        <label for="input-pellido">Apellido</label>
+                        <input type="text" name="input-apellido" id="input-last-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-correo">Email</label>
+                        <input type="email" name="input-correo" id="input-email">
+                    </div>
+                    
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="input-perfil">Perfil</label>
+                        <select id="input-profile" name="input-perfil" onchange="esAdmin()">
+                            <option value="" disabled selected>Seleccionar Perfil</option>
+                            <option value="0">Basico</option>
+                            <option value="1">Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-password">Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-password" id="input-password"  required>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="input-confirm-password">Repetir Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-confirm-password" id="input-confirm-password"  required>
+                        <span id='message'></span>
+                    </div>
+                </div>
+
+                <div class='btn-container'>
+                    <button type="submit" id='submit-pop-up'>Enviar</button>
+                    <button id='cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+
+
+
+
+        <section id='pop-up-editar-usuario'>
+            <div class='pop-up'>
+                <h2 id='pop-up-edit-title'> Editar Usuario</h2> <br>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="input-nombre" id="edit-input-first-name">
+                    </div>
+                    
+                    <div class='tableDiv'> 
+                        <label for="input-pellido">Apellido</label>
+                        <input type="text" name="input-apellido" id="edit-input-last-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-correo">Email</label>
+                        <input type="email" name="input-correo" id="edit-input-email">
+                    </div>
+                    
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="input-perfil">Perfil</label>
+                        <select id="edit-input-profile" name="input-perfil" onchange="esAdmin()">
+                            <option value="" disabled selected>Seleccionar Perfil</option>
+                            <option value="0">Basico</option>
+                            <option value="1">Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="input-password">Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-password" id="input-password-vieja"  required>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="input-confirm-password">Nueva Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-confirm-password" id="edit-input-password"  required>
+                        <span id='message'></span>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="input-confirm-password">Repetir Nueva  Contraseña</label>
+                        <input type="password" autocomplete="off" name="input-confirm-password" id="edit-input-confirm-password"  required>
+                        <span id='message'></span>
+                    </div>
+                </div>
+                <div class='btn-container'>
+                    <button type="submit" id='edit-submit-pop-up'>Enviar</button>
+                    <button id='edit-cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+    <script src="./js/usuarios.js"></script>
+</body>
+</html>

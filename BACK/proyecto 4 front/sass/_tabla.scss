@@ -1,0 +1,92 @@
+main{
+    margin-top: 100px;
+}
+
+#users-table{
+    margin: auto;
+    width: 95vw;
+}
+
+table{
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #cccccc;
+}
+
+td,th{
+    text-align: left;
+}
+
+td{
+    font-size: 0.9rem;
+    padding: 15px 20px;
+}
+
+
+th{
+    font-size:0.7rem;
+    padding:20px;
+    font-weight: normal;
+    border-bottom: 1px solid #37bb0e6c;
+}
+
+tr:hover{
+    background-color: #E8E8E8;
+}
+
+
+.tableDiv{
+    display:flex;
+    flex-direction:column;
+}
+
+// de Contactos
+
+#contacts-table{
+    margin: auto;
+    width: 95vw;
+}
+
+table{
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    text-align: center;
+    margin-left: 40px;
+    border: 1px solid #cccccc;
+}
+
+td,th{
+    text-align: center;
+}
+
+td{
+    font-size: 0.9rem;
+    padding: 15px 20px;
+}
+
+.subtext{
+    margin-top: 3px;
+    font-size: 0.8rem;
+    color:#7a7a7a;
+}
+
+th{
+    font-size:0.7rem;
+    font-weight: normal;
+    border-bottom: 1px solid #237bff6c;
+    margin-right: 100px;
+}
+
+tr:hover{
+    background-color: #E8E8E8;
+}
+.tableDiv{
+    display:flex;
+    flex-direction:column;
+    float:left;
+}
