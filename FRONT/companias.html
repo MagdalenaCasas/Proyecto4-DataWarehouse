@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/companias.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d18b14ff5d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Data Warehouse</title>
+</head>
+<body  onload="verificar()">
+    <header>
+        <a class="logo" href="./contactos.html">LOGO</a>
+        <nav>
+            <ul>
+                <li id='li-contactos'><a href="./contactos.html">Contactos</a></li>
+                <li id='li-companias'><a href="#">Compañías</a></li>
+                <li id='li-usuarios'><a href="./usuarios.html">Usuarios</a></li>
+                <li id='li-regiones'><a href="./regiones.html">Región/Ciudad</a></li>
+                <img onclick="cerrarSesion()" class = "singOut" src="./assets/arrow-right-from-bracket-solid.svg" alt="singOut">
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id='li-companiasle'>
+            <button id='add-company'>Agregar compañía</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th id='name'>Nombre</th>
+                        <th id='address'>Dirección</th>
+                        <th id='country'>País / Región</th>
+                        <th id='telephone'>Teléfono</th>
+                        <th id='telephone'>Email</th>
+                        <th id='actions'>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableData">
+
+                </tbody>
+            </table>
+        </section>
+        <section id='pop-up-company'>
+            <div class='pop-up'>
+                <h2 id='pop-up-title'>Compañia</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="input-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="input-address">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="input-email">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="telephone">Teléfono</label>
+                        <input type="text" name="telephone" id="input-telephone">
+                    </div>
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="region">Región</label>
+                        <select name="region" id="region" class="region" onchange="RegionIdSeleccionada()">
+                            <option value="" disabled selected>Seleccionar Región</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="pais">Pais</label>
+                        <select name="pais" id="pais" class="pais" onchange="paisIdSeleccionado()">
+                            <option value="" disabled selected>Seleccionar Pais</option>
+                        </select>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="ciudad">Ciudad</label>
+                        <select name="ciudad" id="ciudad" class="ciudad" onchange="ciudadIdSeleccionada ()">
+                            <option value="" disabled selected>Seleccionar Ciudad</option>
+                        </select>
+                    </div>
+                <div class='btn-container'>
+                    <button type="submit" id='submit-pop-up'>Guardar Compañia</button>
+                    <button id='cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id='pop-up-edit-company'>
+            <div class='pop-up'>
+                <h2 id='pop-up-edit-title'>Compañia</h2>
+                <div class='primary-info'>
+                    <div class='tableDiv'>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="edit-input-name">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="address">Dirección</label>
+                        <input type="text" name="address" id="edit-input-address">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="edit-input-email">
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="telephone">Teléfono</label>
+                        <input type="text" name="telephone" id="edit-input-telephone">
+                    </div>
+                </div>
+                <div class='secondary-info'>
+                    <div class='tableDiv'>
+                        <label for="region">Región</label>
+                        <select name="region" id="edit-region" class="region" onchange="RegionIdSeleccionada()">
+                            <option value="" disabled selected>Seleccionar Región</option>
+                        </select>
+                    </div>
+                    
+                    <div class='tableDiv'>
+                        <label for="pais">Pais</label>
+                        <select name="pais" id="edit-pais" class="pais" onchange="paisEditSeleccionado()">
+                            <option value="" disabled selected>Seleccionar Pais</option>
+                        </select>
+                    </div>
+                    <div class='tableDiv'>
+                        <label for="ciudad">Ciudad</label>
+                        <select name="ciudad" id="edit-ciudad" class="ciudad" onchange="ciudadEditSeleccionada ()">
+                            <option value="" disabled selected>Seleccionar Ciudad</option>
+                        </select>
+                    </div>
+                <div class='btn-container'>
+                    <button type="submit" id='edit-submit-pop-up'>Guardar Compañia</button>
+                    <button id='edit-cancel-pop-up'>Cancelar</button>
+                </div>
+                
+            </div>
+        </section>
+        <section id='pop-up'>
+            <div class="pop-up-window">
+                <div class='pop-up-div'>
+                    <div class='pop-up-title-div'>
+                        <h2 id='title-name'></h2>
+                        <h2 id='title-name-value'></h2>
+                    </div>
+                    <div class='pop-up-btns'>
+                        <button type='submit' class='submit' id='submit'>Eliminar</button>
+                        <button class='cancel btn' id="submitcancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/companias.js"></script>
+</body>
+</html>
