@@ -646,7 +646,7 @@ const getContactos= async ()=>{
     displaycontacto(contactos);
   
   })
-    
+  .catch(location.href = 'login.html')
   
 }
 
