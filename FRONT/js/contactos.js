@@ -316,21 +316,26 @@ btncancelar.addEventListener("click", ()=>{
 })
   
 companiaNuevoContacto.addEventListener("click", async ()=>{
+  companiaNuevoContacto.innerHTML = ` <option value="" disabled selected>Seleccionar Compañia</option>`
   await  getCompanias()
 })
 regionNuevoContacto.addEventListener("click", async ()=>{
-    await  getRegiones()
+  regionNuevoContacto.innerHTML = ` <option value="" disabled selected>Seleccionar Región</option>`
+  await  getRegiones()
 })
 paisNuevoContacto.addEventListener("click", async ()=>{
+  paisNuevoContacto.innerHTML = ` <option value="" disabled selected>Seleccionar Pais</option>`
     await  getPaisesporid()
 })
 ciudadNuevoContacto.addEventListener("click", async ()=>{
+  ciudadNuevoContacto.innerHTML = `  <option value="" disabled selected>Seleccionar Ciudad</option>`
     await  getciudadesporid()
 })
 
 
 canalNuevoContacto.forEach(element=>{
   element.addEventListener("click", ()=>{
+    element.innerHTML = `<option value="" disabled selected>Seleccionar Canal</option>`
     getCanales()
   })
 })
@@ -401,6 +406,7 @@ const agregarCanalesHtml = ()=>{
 
   canales.forEach(canal=>{
     canal.addEventListener("click", ()=>{
+      element.innerHTML = `<option value="" disabled selected>Seleccionar Canal</option>`
       getCanales()
     })
   })
@@ -798,11 +804,12 @@ const displaycontacto = (contactos)=>{
       btnEliminarVarios.style.display = "block"
       let contador = document.getElementById("contador-checkeados");
       contador.innerText =contactosId.length
+      
      }else{
       btnEliminarVarios.style.display = "none"
      }
-    let checkHijas = document.querySelectorAll(".checkbox-del")
-     checkHijas.forEach(hija=>{
+      let checkHijas = document.querySelectorAll(".checkbox-del")
+      checkHijas.forEach(hija=>{
        if(hija.checked == false){
          hija.checked = true
          let btnEliminarVarios= document.getElementById("eliminar-contactos");
@@ -810,7 +817,7 @@ const displaycontacto = (contactos)=>{
        }else if(!checkboxMadre.checked) {
         hija.checked = false
        }
-     })
+      })
    })
   
    // ----------------------------BOTON EDITAR CONTACTO-------------------------------
@@ -910,6 +917,7 @@ const displaycontacto = (contactos)=>{
          let canalContact = document.querySelectorAll(".edit-canal");
           canalContact.forEach(canal=>{
             canal.addEventListener("click", ()=>{
+              canal.innerHTML = `<option value="" disabled selected>Seleccionar Canal</option>`
               getCanalesModif()
             })
           })
@@ -1419,24 +1427,29 @@ const getciudadeModif = async()=>{
 //add event listener de popup editar contactos
 
 regionModifContacto.addEventListener("click", ()=>{
+  regionModifContacto.innerHTML = `<option value="" disabled selected>Seleccionar Region</option>`
   getRegionesModif()
 });
 
 paisModifContacto.addEventListener("click", ()=>{
+  paisModifContacto.innerHTML = `<option value="" disabled selected>Seleccionar Pais</option>`
   getPaisesModif()
 });
 ciudadModifContacto.addEventListener("click", ()=>{
+  ciudadModifContacto.innerHTML = `<option value="" disabled selected>Seleccionar Ciudad</option>`
   getciudadeModif()
 });
 
 
 canalModifContacto.forEach(element=>{
   element.addEventListener("click", ()=>{
+    element.innerHTML = `<option value="" disabled selected>Seleccionar Canal</option>`
     getCanalesModif();
   })
 })
 
 companiaModifContacto.addEventListener("click", ()=>{
+  companiaModifContacto.innerHTML = `<option value="" disabled selected>Seleccionar Compañia</option>`
   getCompaniasModif();
 });
 

@@ -586,27 +586,33 @@ getCompanias()
 
 
 regionNuevaCompania.addEventListener("click",async()=>{
+  regionNuevaCompania.innerHTML = `<option value="" disabled selected>Seleccionar Region</option>`
     await  getRegiones()
 })
 
 paisNuevaCompania.addEventListener("click",async ()=>{
+  paisNuevaCompania.innerHTML = `<option value="" disabled selected>Seleccionar Compania</option>`
     await getPaisesporid();
 })
   
 ciudadNuevaCompania.addEventListener("click", async()=>{
+  ciudadNuevaCompania.innerHTML = `<option value="" disabled selected>Seleccionar Ciudad</option>`
     await getciudadesporid()
 })
   
 
 regionEditCompania.addEventListener("click",async()=>{
+  regionEditCompania.innerHTML = `<option value="" disabled selected>Seleccionar Compania</option>`
   await  getRegionesEdit()
 })
 
 paisEditCompania.addEventListener("click",async ()=>{
+  paisEditCompania.innerHTML = `<option value="" disabled selected>Seleccionar Compania</option>`
   await getPaisesporidEdit()
 })
 
 ciudadEditCompania.addEventListener("click", async()=>{
+  ciudadEditCompania.innerHTML = `<option value="" disabled selected>Seleccionar Ciudad</option>`
   await getCiudadesidEdit ()
 })
 
